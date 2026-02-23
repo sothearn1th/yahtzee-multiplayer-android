@@ -1,6 +1,6 @@
 # Multiplayer Yahtzee (Android)
 A solo University project of the game Yahtzee focusing on database management to deliver a multiplayer experience between two devices.
-![Host & Join Demo](media/welcome.png)
+![Welcome Picture](media/welcome.png)
 
 
 
@@ -53,37 +53,22 @@ This makes multiplayer deterministic and easy to reason about: **the database is
 ---
 
 ## Code Highlights
-> These files demonstrate the core engineering work: matchmaking flow, shared state design, real-time sync, and scoring logic.
-
-### Lobby / Room Hosting & Joining
-
 
 ### Multiplayer State Models (Shared State)
+- Core multiplayer synchronization achieved by subscribing to the room’s GameState in Firebase using a ValueEventListener. 
 
+![Snippet1](media/snippet1.jpg)
+
+- Whenever any player updates the shared state (dice rolls, scoring choice, or turn changes), onDataChange() receives the latest GameState and calls applyStateToUI() to re-render the UI from the source-of-truth state. This keeps both players consistent without relying on local assumptions.
 
 ### Real-time Sync + Turn Handling
 
-
-### Yahtzee Scoring Engine
-
-
 ---
 
-## Suggested “Showcase Snippets” (for a public portfolio repo)
-If you're keeping the full project private, include only curated snippets:
-
-**/code-snippets/**
-
-
-This keeps the repo clean, readable, and focused on your strongest engineering work.
-
----
 
 ## What I Learned / Engineering Focus
 - Designing a multiplayer system around a **single source of truth** game state
 - Building **turn-based synchronization** that stays consistent across clients
-- Implementing a rules engine (Yahtzee scoring) and keeping it reliable
-- Structuring code so UI is driven by state, which simplifies debugging
 
 ---
 
