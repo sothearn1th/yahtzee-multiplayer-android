@@ -27,6 +27,7 @@ A turn-based **multiplayer Yahtzee** app for Android. Players can host a room, s
 ### 1) Hosting & Connecting
 Shows creating a room and connecting another player via room code:  
 `media/demo1.gif`
+
 ![Host & Join Demo](media/demo1.gif)
 
 
