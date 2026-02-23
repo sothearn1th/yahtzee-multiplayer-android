@@ -1,5 +1,7 @@
 # Multiplayer Yahtzee (Android)
 A solo University project of the game Yahtzee focusing on database management to deliver a multiplayer experience between two devices.
+![Host & Join Demo](media/welcome.png)
+
 
 
 **Platform:** Android  
