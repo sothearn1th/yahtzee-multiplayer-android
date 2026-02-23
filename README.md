@@ -62,7 +62,11 @@ This makes multiplayer deterministic and easy to reason about: **the database is
 - Whenever any player updates the shared state (dice rolls, scoring choice, or turn changes), onDataChange() receives the latest GameState and calls applyStateToUI() to re-render the UI from the source-of-truth state. This keeps both players consistent without relying on local assumptions.
 
 ### Real-time Sync + Turn Handling
+- This screenshot shows how a turn ends in multiplayer. After a player confirms a scoring choice, the app resets the dice state for the next turn (rolls left, held flags, UI toggles), updates currentTurnUid to transfer turn ownership to the opponent, and writes the updated GameState back to Firebase with gameRef.setValue(currentState). 
 
+![Snippet2](media/snippet2.jpg)
+
+- Because both clients are listening for state changes, the opponent immediately receives the update and their UI becomes active for their turn.
 ---
 
 
